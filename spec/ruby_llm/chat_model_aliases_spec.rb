@@ -31,4 +31,18 @@ RSpec.describe RubyLLM::Chat do
     expect(chat.model.id).to eq('us.anthropic.claude-sonnet-4-20250514-v1:0')
     expect(chat.model.provider).to eq('bedrock')
   end
+
+  it 'resolves gemini-3.5-flash-preview alias to the stable gemini-3.5-flash model' do
+    chat_gemini = RubyLLM.chat(model: 'gemini-3.5-flash-preview', provider: :gemini)
+    expect(chat_gemini.model.id).to eq('gemini-3.5-flash')
+    expect(chat_gemini.model.provider).to eq('gemini')
+
+    chat_openrouter = RubyLLM.chat(model: 'gemini-3.5-flash-preview', provider: :openrouter)
+    expect(chat_openrouter.model.id).to eq('google/gemini-3.5-flash')
+    expect(chat_openrouter.model.provider).to eq('openrouter')
+
+    chat_vertex = RubyLLM.chat(model: 'gemini-3.5-flash-preview', provider: :vertexai)
+    expect(chat_vertex.model.id).to eq('gemini-3.5-flash')
+    expect(chat_vertex.model.provider).to eq('vertexai')
+  end
 end

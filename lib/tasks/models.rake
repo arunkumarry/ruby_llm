@@ -467,6 +467,13 @@ def generate_aliases # rubocop:disable Metrics/PerceivedComplexity
     }
   end
 
+  # Remap gemini-3.5-flash-preview to stable gemini-3.5-flash
+  aliases['gemini-3.5-flash-preview'] = {
+    'gemini' => 'gemini-3.5-flash',
+    'openrouter' => 'google/gemini-3.5-flash',
+    'vertexai' => 'gemini-3.5-flash'
+  }
+
   sorted_aliases = aliases.sort.to_h
   File.write(RubyLLM::Aliases.aliases_file, JSON.pretty_generate(sorted_aliases))
 

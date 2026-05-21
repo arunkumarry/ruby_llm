@@ -213,6 +213,16 @@
     "openrouter": "google/gemini-3.1-pro-preview-customtools",
     "vertexai": "gemini-3.1-pro-preview-customtools"
   },
+  "gemini-3.5-flash": {
+    "gemini": "gemini-3.5-flash",
+    "openrouter": "google/gemini-3.5-flash",
+    "vertexai": "gemini-3.5-flash"
+  },
+  "gemini-3.5-flash-preview": {
+    "gemini": "gemini-3.5-flash",
+    "openrouter": "google/gemini-3.5-flash",
+    "vertexai": "gemini-3.5-flash"
+  },
   "gemini-embedding-001": {
     "gemini": "gemini-embedding-001",
     "vertexai": "gemini-embedding-001"
